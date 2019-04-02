@@ -6,6 +6,7 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
+import com.github.yghysdr.server.aidl.Apple;
 import com.github.yghysdr.server.aidl.IStoreAidl;
 
 public class StoreService extends Service {
@@ -29,6 +30,11 @@ public class StoreService extends Service {
         public int getApplePrice() throws RemoteException {
             Log.d(TAG, "getApplePrice: 有人在看数据");
             return 100;
+        }
+
+        @Override
+        public Apple getApple() throws RemoteException {
+            return new Apple(System.currentTimeMillis() + "", 1);
         }
     }
 }

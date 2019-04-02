@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
-                    Snackbar.make(view, iStoreAidl.getApplePrice() + "...", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, iStoreAidl.getApplePrice() + "..."
+                            + iStoreAidl.getApple().getId(), Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 } catch (RemoteException e) {
                     e.printStackTrace();
